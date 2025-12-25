@@ -1,1 +1,2 @@
 # sales_analyzer
+“My project analyzes sales data to provide insights into both monthly and annual performance. It processes a data containing order information, categories, products, sales, and revenue. Using Pandas, I clean and manipulate the data, NumPy is used for numerical calculations, and Matplotlib visualizes trends through line charts, bar charts, and pie charts. The project can identify category-wise performance, monthly revenue trends, and yearly growth. ”
