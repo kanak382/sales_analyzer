@@ -26,7 +26,7 @@ print("Month with Highest Sales:", highest_sales_month)
 
 #              -----------monthly revenue ---------------
 print("monthly revenue")
-monthly_revenue = df.groupby('Month_Num')['Order_ID'].sum()
+monthly_revenue = df.groupby('Month_Num')['Order_ID'].count()
 print(monthly_revenue)
 #              ------month with highest revenue------
 highest_revenue_month = monthly_revenue.idxmax()
@@ -73,5 +73,6 @@ plt.xlabel("Month")
 plt.ylabel("Total Sales Quantity")
 plt.grid(True)
 plt.show()
+
 
     #-----------------------------------------------------------------------END OF THE ANNUAL REPORT---------------------------------------------------------------------
