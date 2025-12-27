@@ -9,7 +9,7 @@ import seaborn as sns
 #           ------------- read sales data-------------------
 df=pd.read_csv("sales_analyzer.csv")
 print(df.to_string())
-df['Order_Date'] = pd.to_datetime(df['Order_Date'], errors='coerce')
+df['Order_Date'] = pd.to_datetime(df['Order_Date'])
 df['year']=df['Order_Date'].dt.year
 df['month']=df['Order_Date'].dt.month
 df['date'] = df['Order_Date'].dt.date    
@@ -40,7 +40,7 @@ else:
     print(category_sales, "\n")
 
     #            ------------Category-wise revenue--------------
-    category_revenue = monthly_df.groupby('Category')['Revenue'].sum()
+    category_revenue = monthly_df.groupby('Category')['Revenue'].count()
     print("Category-wise Revenue:")
     print(category_revenue, "\n")
 
@@ -62,7 +62,6 @@ else:
     plt.title("Category-wise Sales")
     plt.xlabel("Category")
     plt.ylabel("Number of Orders")
-    plt.tight_layout()
     plt.show()
 
     #               -------- BAR CHART: CATEGORY-WISE REVENUE --------
@@ -70,8 +69,8 @@ else:
     plt.title("Category-wise Revenue")
     plt.xlabel("Category")
     plt.ylabel("Revenue")
-    plt.tight_layout()
     plt.show()
+
 
 
     #-----------------------------------------------------------------------END OF THE MONTHLY REPORT---------------------------------------------------------------------
